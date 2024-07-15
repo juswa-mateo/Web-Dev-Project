@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Individual Inventory Form</title>
+        <link rel="stylesheet" href="form-style.css" />
+
+        <script> 
+            async function handleSubmit(event) {
+                event.preventDefault();
+                
+                const form = event.target;
+                const formData = new FormData(form);
+                
+                const params = new URLSearchParams();
+                for (const pair of formData.entries()){
+                    params.append(pair[0], pair[1])
+                }
+        
+                try {
+                    const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: params
+                    });
+
+                const result = await response.json();
+                if (result.result === 'success') {
+                    alert(result.message);
+                } else {
+                    alert(result.message);
+                }
+            }
+                catch (error) {
+                    alert('Submission failed: ' + error.toString());
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <div class="container1">
+            <p>Form IA-GICTS</p>
+            <img src="assets/form_name.png" alt="INDIVIDUAL INVENTORY RECORD FORM" width="400" height="500">
+            <br> <br> <br>
+        </div>
+        <div class="navbar">
+            <div>
+            <a href="#personal-info">Personal Information</a>
+            <a href="#education">Educational Background</a>
+            <a href="#home_bg">Home and Family Background</a>
+            <a href="#health_part">Health</a>
+            <a href="#interest_hobbies">Interests and Hobbies</a>
+            <a href="#test_notes">Test Results and Significant Notes</a>
+            </div>
+        </div>
+    <form method="post" action="https://script.google.com/macros/s/AKfycbwz-5gqVeSghQ75_w8D0OrrHQqiNi7-6aaKS91UwoERZPjVa1oWDGeyrop3qjaVg9Eb/exec" onsubmit="handleSubmit(event)">
+        <div class="container2">
+            <div class="column">
+                <label for="student_no">Student No.<span class="required"></span></label>
+                <input type="text" id="student_no" name="student_no" placeholder="2021-*****-MN-0"required>
+            </div>
+            <div class="column">
+                <label for="date">Date:<span class="required"></span></label>
+                <input type="date" id="date" name="date" required>
+            </div>
+        </div>
+
+        <section id="personal-info">
+        <h1>I. PERSONAL INFORMATION</h1>
+        <div class="container2">
+            <div class="column">
+                <label for="surname">Surname:<span class="required"></span></label>
+        	<input type="text" id="surname" name="surname" placeholder="DELA CRUZ" required>
+            
+            </div>
+            <div class="column">
+                <label for="first_name">First Name:<span class="required"></span></label>
+        	<input type="text" id="first_name" name="first_name" placeholder="JUAN" required>
+            </div>
+	    <div class="column">
+                <label for="middle_name">Middle Name:<span class="required"></span></label>
+        	<input type="text" id="middle_name" name="middle_name" placeholder="TAMAD" required>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="column">
+                <label for="course">Course Year and Section:<span class="required"></span></label>
+        	<input type="text" id="course" name="course" required>
+            </div>
+            <div class="column">
+                <label for="gender">Gender:<span class="required"></span></label>
+        	<input type="text" id="gender" name="gender" required>
+            </div>
+            <div class="column">
+                <label for="age">Age:<span class="required"></span></label>
+            <input type="number" id="age" name="age" required>
+            </div>
+            <div class="column">
+                <label for="civil_status">Civil Status:<span class="required"></span></label>
+        	<input type="text" id="civil_status" name="civil_status" required>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="column">
+                <label for="height">Height:<span class="required"></span></label>
+        	<input type="number" id="height" name="height" maxlength="4" placeholder="179" required>
+            </div>
+            <div class="column">
+                <label for="weight">Weight:<span class="required"></span></label>
+        	<input type="number" id="weight" name="weight" maxlength="3" placeholder="65">
+            </div>
+	        <div class="column">
+                <label for="complexion">Complexion:<span class="required"></span></label>
+        	<input type="text" id="complexion" name="complexion" placeholder="TAN" required>
+            </div>
+            <div class="column">
+                <label for="hs_gen_ave">Highschool Gen. Ave.:<span class="required"></span></label>
+        	<input type="number" id="hs_gen_ave" name="hs_gen_ave" min="76" max="100" required>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="column">
+                <label for="birth_date">Date of Birth:<span class="required"></span></label>
+        	<input type="date" id="birth_date" name="birth_date" required>
+            </div>
+            <div class="column">
+                <label for="birth_place">Place of Birth:<span class="required"></span></label>
+        	<input type="text" id="birth_place" name="birth_place" required>
+            </div>
+            <div class="column">
+                <label for="religion">Religion:<span class="required"></span></label>
+            <input type="text" id="religion" name="religion" required>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="column">
+                <label for="mobile_number">Mobile Number:<span class="required"></span></label>
+        	<input type="number" id="mobile_number" name="mobile_number" pattern="[0-9]" maxlength="11" placeholder="09*********" required>
+            </div>
+            <div class="column">
+                <label for="tel_number">Telephone Number:</span></label>
+        	<input type="number" id="tel_number" name="tel_number">
+            </div>
+	        <div class="column">
+                <label for="email_add">Email Address:<span class="required"></span></label>
+        	<input type="email" id="email_add" name="email_add" required>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="column">
+                <label for="city_address">City Address:<span class="required"></span></label>
+        	<input type="text" id="city_address" name="city_address" required>
+            </div>
+            <div class="column">
+               <label for="prov_address">Provincial Adress:<span class="required"></span></label>
+               <input type="text" id="prov_address" name="prov_address" required>
+            </div>
+        </div>
+        <h4>To be indicated in case of accident or serious illness:</h4>
+        <div class="container2">
+            <div class="column">
+                <label for="accident"><span class="required"></span></label>
+            <input type="text" id="accident" name="accident" placeholder="Name" required>
+            </div>
+            <div class="column">
+                <label for="relationship"><span class="required"></span></label>
+            <input type="text" id="relationship" name="relationship" placeholder="Relationship" required>
+            </div>
+            <div class="column">
+                <label for="contact_number"><span class="required"></span></label>
+            <input type="number" id="contact_number" name="contact_number" maxlength="11" placeholder="Contact Number" required>
+            </div>        
+        </div>
+        </section>
+
+        <section id="education">
+        <div class="form-section">
+        <h1>II. EDUCATIONAL BACKGROUND</h1>
+        <h3>Pre-school</h3>
+            <div class="container2">
+                <div class="column">
+                    <label for="pre_school">School Graduated:<span class="required"></span></label>
+                    <input type="text" id="pre_school" name="pre_school" placeholder="SCHOOL NAME" required>
+                </div>
+                <div class="column">
+                    <label for="pre_type">Type of School:<span class="required"></span></label>
+                    <input type="text" id="pre_type" name="pre_type" placeholder="PRIVATE/PUBLIC" required>
+                </div>
+                <div class="column">
+                    <label for="pre_attendance">Dates of Attendance:<span class="required"></span></label>
+                    <input type="text" id="pre_attendance" name="pre_attendance" placeholder="20**-20**" required>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="column">
+                    <label for="pre_address">Address of the School:<span class="required"></span></label>
+                    <input type="text" id="pre_address" name="pre_address" placeholder="SCHOOL ADDRESS" required>
+                </div>
+                <div class="column">
+                    <label for="pre_honors">Honors Received:<span class="required"></span></label>
+                    <input type="text" id="pre_honors" name="pre_honors" placeholder="WITH HONORS" required>
+                </div>
+            </div>
+        <h3>Elementary</h3>
+            <div class="container2">
+                <div class="column">
+                    <label for="elem_school">School Graduated:<span class="required"></span></label>
+                    <input type="text" id="elem_school" name="elem_school" placeholder="SCHOOL NAME" required>
+                </div>
+                <div class="column">
+                    <label for="elem_type">Type of School:<span class="required"></span></label>
+                    <input type="text" id="elem_type" name="elem_type" placeholder="PRIVATE/PUBLIC" required>
+                </div>
+                <div class="column">
+                    <label for="elem_attendance">Dates of Attendance:<span class="required"></span></label>
+                    <input type="text" id="elem_attendance" name="elem_attendance" placeholder="20**-20**" required>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="column">
+                    <label for="elem_address">Address of the School:<span class="required"></span></label>
+                    <input type="text" id="elem_address" name="elem_address" placeholder="SCHOOL ADDRESS" required>
+                </div>
+                <div class="column">
+                    <label for="elem_honors">Honors Received:<span class="required"></span></label>
+                    <input type="text" id="elem_honors" name="elem_honors" placeholder="WITH HONORS" required>
+                </div>
+            </div>
+        <h3>High School</h3>
+            <div class="container2">
+                <div class="column">
+                    <label for="hs_school">School Graduated:<span class="required"></span></label>
+                    <input type="text" id="hs_school" name="hs_school" placeholder="SCHOOL NAME" required>
+                </div>
+                <div class="column">
+                    <label for="hs_type">Type of School:<span class="required"></span></label>
+                    <input type="text" id="hs_type" name="hs_type" placeholder="PRIVATE/PUBLIC" required>
+                </div>
+                <div class="column">
+                    <label for="hs_attendance">Dates of Attendance:<span class="required"></span></label>
+                    <input type="text" id="hs_attendance" name="hs_attendance" placeholder="20**-20**" required>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="column">
+                    <label for="hs_address">Address of the School:<span class="required"></span></label>
+                    <input type="text" id="hs_address" name="hs_address" placeholder="SCHOOL ADDRESS" required>
+                </div>
+                <div class="column">
+                    <label for="hs_honors">Honors Received:<span class="required"></span></label>
+                    <input type="text" id="hs_honors" name="hs_honors" placeholder="WITH HONORS" required>
+                </div>
+            </div>
+        <h3>Vocational</h3>
+            <div class="container2">
+                <div class="column">
+                    <label for="voc_school">School Graduated:</label>
+                    <input type="text" id="voc_school" name="voc_school" placeholder="SCHOOL NAME">
+                </div>
+                <div class="column">
+                    <label for="voc_type">Type of School:</label>
+                    <input type="text" id="voc_type" name="voc_type" placeholder="PRIVATE/PUBLIC">
+                </div>
+                <div class="column">
+                    <label for="voc_attendance">Dates of Attendance:</label>
+                    <input type="text" id="voc_attendance" name="voc_attendance" placeholder="20**-20**">
+                </div>
+            </div>
+            <div class="container2">
+                <div class="column">
+                    <label for="voc_address">Address of the School:</label>
+                    <input type="text" id="voc_address" name="voc_address" placeholder="SCHOOL ADDRESS">
+                </div>
+                <div class="column">
+                    <label for="voc_honors">Honors Received:</label>
+                    <input type="text" id="voc_honors" name="voc_honors" placeholder="WITH HONORS">
+                </div>
+            </div>
+        <h3>College</h3>
+            <div class="container2">
+                <div class="column">
+                    <label for="college_school">School Graduated:</label>
+                    <input type="text" id="college_school" name="college_school" placeholder="SCHOOL NAME">
+                </div>
+                <div class="column">
+                    <label for="college_type">Type of School:</span></label>
+                    <input type="text" id="college_type" name="college_type" placeholder="PRIVATE/PUBLIC">
+                </div>
+                <div class="column">
+                    <label for="college_attendance">Dates of Attendance:</label>
+                    <input type="text" id="college_attendance" name="college_attendance" placeholder="20**-20**">
+                </div>
+            </div>
+            <div class="container2">
+                <div class="column">
+                    <label for="college_address">Address of the School:</label>
+                    <input type="text" id="college_address" name="college_address" placeholder="SCHOOL ADDRESS">
+                </div>
+                <div class="column">
+                    <label for="college_honors">Honors Received:</label>
+                    <input type="text" id="college_honors" name="college_honors" placeholder="WITH HONORS">
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section id="home_bg">
+            <div class="form-section">
+            <h1>III. HOME AND FAMILY BACKGROUND</h1>
+            <!-- Father -->
+            <div class="container2">
+                <div class="column">
+                    <label for="father">Name of Father:<span class="required"></span></label>
+                <input type="text" id="father" name="father" placeholder="CRISOSTOMO DELA CRUZ" required>
+                </div>
+                <div class="container2">
+                <div class="column">
+                    <label for="age_fath">Age:<span class="required"></span></label>
+                <input type="number" id="age_fath" name="age_fath" placeholder="55" required>
+                </div>
+                <div class="column">
+                        <label for="status_f">Status:<span class="required"></span></label>
+                        <select id="status_f" name="status_f" required>
+                            <option value="living">Living</option>
+                            <option value="deceased">Deceased</option>
+                        </select>
+                </div>
+                </div>
+            </div>
+
+            <div class="container2">
+                <div class="column">
+                    <label for="educ_fath">Educational Attainment:<span class="required"></span></label>
+                <input type="text" id="educ_fath" name="educ_fath" placeholder="COLLEGE GRADUATE" required>
+                </div>
+                    <div class="column">
+                        <label for="occu_fath">Occupation:<span class="required"></span></label>
+                    <input type="text" id="occu_fath" name="occu_fath" placeholder="TEACHER" required>
+                    </div>
+            </div>
+
+            <div class="container2">
+                <div class="column">
+                    <label for="employer_fath">Name of Employer:<span class="required"></span></label>
+                <input type="text" id="employer_fath" name="employer_fath" placeholder="EDGARDO BATUMBAKAL LPT." required>
+                </div>
+                    <div class="column">
+                        <label for="employ_add_fath">Address of Employer:<span class="required"></span></label>
+                    <input type="text" id="employ_add_fath" name="employ_add_fath" placeholder="CUBAO, QUEZON CITY" required>
+                    </div>
+            </div>
+
+            <!-- Mother -->
+            <h4></h4>
+            <div class="container2">
+                <div class="column">
+                    <label for="mother">Name of Mother:<span class="required"></span></label>
+                <input type="text" id="mother" name="mother" placeholder="CRISELDA DELA CRUZ" required>
+                </div>
+                <div class="container2">
+                <div class="column">
+                    <label for="age_moth">Age:<span class="required"></span></label>
+                <input type="number" id="age_moth" name="age_moth" placeholder="55" required>
+                </div>
+                <div class="column">
+                        <label for="status_m">Status:<span class="required"></span></label>
+                        <select id="status_m" name="status_m" required>
+                            <option value="living">Living</option>
+                            <option value="deceased">Deceased</option>
+                        </select>
+                </div>
+                </div>
+            </div>
+
+            <div class="container2">
+                <div class="column">
+                    <label for="educ_moth">Educational Attainment:<span class="required"></span></label>
+                <input type="text" id="educ_moth" name="educ_moth" placeholder="COLLEGE GRADUATE" required>
+                </div>
+                    <div class="column">
+                        <label for="occu_moth">Occupation:<span class="required"></span></label>
+                    <input type="text" id="occu_moth" name="occu_moth" placeholder="LAWYER" required>
+                    </div>
+            </div>
+
+            <div class="container2">
+                <div class="column">
+                    <label for="employer_moth">Name of Employer:<span class="required"></span></label>
+                <input type="text" id="employer_moth" name="employer_moth" placeholder="ATTY. CHELSEA MITALO" required>
+                </div>
+                    <div class="column">
+                        <label for="employ_add_moth">Address of Employer:<span class="required"></span></label>
+                    <input type="text" id="employ_add_moth" name="employ_add_moth" placeholder="CUBAO, QUEZON CITY" required>
+                    </div>
+            </div>
+            
+            <!-- Guardian -->
+            <h4></h4>
+            <div class="container2">
+                <div class="column">
+                    <label for="guardian">Name of Guardian:<span class="required"></span></label>
+                <input type="text" id="guardian" name="guardian" placeholder="CRISANTA DELA CRUZ" required>
+                </div>
+                <div class="container2">
+                <div class="column">
+                    <label for="age_guar">Age:<span class="required"></span></label>
+                <input type="number" id="age_guar" name="age_guar" placeholder="45" required>
+                </div>
+                <div class="column">
+                    <label for="relation">Relation:<span class="required"></span></label>
+                <input type="text" id="relation" name="relation" placeholder="AUNTIE" required>
+                </div>
+                </div>
+            </div>
+
+            <div class="container2">
+                <div class="column">
+                    <label for="educ_guar">Educational Attainment:<span class="required"></span></label>
+                <input type="text" id="educ_guar" name="educ_guar" placeholder="COLLEGE GRADUATE" required>
+                </div>
+                    <div class="column">
+                        <label for="occu_guar">Occupation:<span class="required"></span></label>
+                    <input type="text" id="occu_guar" name="occu_guar" placeholder="OFFICE WORKER" required>
+                    </div>
+            </div>
+
+            <div class="container2">
+                <div class="column">
+                    <label for="employer_guar">Name of Employer:<span class="required"></span></label>
+                <input type="text" id="employer_guar" name="employer_guar" placeholder="MILFREDO AGUILAR" required>
+                </div>
+                    <div class="column">
+                        <label for="employ_add_guar">Address of Employer:<span class="required"></span></label>
+                    <input type="text" id="employ_add_guar" name="employ_add_guar" placeholder="TOMAS MORATO, QUEZON CITY" required>
+                    </div>
+            </div>
+
+            <h3></h3>
+            <div class="container2">
+                <div class="column">
+                    <label for="marital_status">Parent's Marital Status:<span class="required"></span></label>
+                    <select id="marital_status" name="marital_status" required>
+                        <option value="single_parent">Single Parent</option>
+                        <option value="married_together">Married and Staying Together</option>
+                        <option value="married_separated">Married but Separated</option>
+                        <option value="not_married_together">Not Married but Living Together</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div class="column">
+                    <label for="others_pms">If Others:</label>
+                <input type="text" id="others_pms" name="others_pms">
+                </div>
+            </div>
+
+            <div class="container2">
+                <div class="column">
+                    <label for="no_children">No. of children in family:<span class="required"></span></label>
+                <input type="number" id="no_children" name="no_children" placeholder="6" required>
+                
+                </div>
+                <div class="column">
+                    <label for="no_brothers">Number of Brother/s:<span class="required"></span></label>
+                <input type="number" id="no_brothers" name="no_brothers" placeholder="2" required>
+                </div>
+            <div class="column">
+                    <label for="no_sisters">Number of Sister/s:<span class="required"></span></label>
+                <input type="number" id="no_sisters" name="no_sisters" placeholder="3" required>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="column">
+                    <label for="no_children_employed">Number of brother/s or sister/s gainfully employed?:<span class="required"></span></label>
+                <input type="number" id="no_children_employed" name="no_children_employed" placeholder="2" required>
+                </div>
+                <div class="column">
+                    <label for="ordinal_pos">Ordinal Position:<span class="required"></span></label>
+                <input type="text" id="ordinal_pos" name="ordinal_pos" placeholder="5th" required>
+                </div>
+            </div>
+            <div class="question">
+                <p>Is your brother/sister who is gainfully employed providing support to your:<span class="required"></span><i>(Please Check)</i></span></p>
+                <div class="checkbox-list">
+                  <label><input type="checkbox" name="family_supp"> Family?</label>
+                  <label><input type="checkbox" name="studies_supp"> Your studies?</label>
+                  <label><input type="checkbox" name="own-family_supp"> His/her own family?</label>
+                </div>
+            </div>
+             
+            <div class="question">
+                <p>Who finances your schooling?<span class="required"></span><i>(Please Check)</i></span></p>
+                <div class="checkbox-list">
+                  <div class="column1">
+                    <label><input type="checkbox" name="parents_fin"> Parents</label>
+                    <label><input type="checkbox" name="brother-sister_fin"> Brother/Sister</label>
+                  </div>
+                  <div class="column1">
+                    <label><input type="checkbox" name="spouse_fin"> Spouse</label>
+                    <label><input type="checkbox" name="scholarship_fin"> Scholarship</label>
+                  </div>
+                  <div class="column1">
+                    <label><input type="checkbox" name="relatives_fin"> Relatives</label>
+                    <label><input type="checkbox" name="self-supporting_fin"> Self-supporting/working student</label>
+                  </div>
+                </div>
+            </div> 
+
+            <div class="container2">
+                <div class="column">
+                    <label for="weekly_allowance">How much is your weekly allowance?<span class="required"></span></label>
+                <input type="text" id="weekly_allowance" name="weekly_allowance">
+                </div>
+                <div class="column">
+                    <label for="parents_monthly_income">Parents' Total Monthly Income:<span class="required"></span></label>
+                    <select id="parents_monthly_income" name="parents_monthly_income" required>
+                        <option value="below_50">Below ₱5,000</option>
+                        <option value="5k_10k">₱5,001 - ₱10,000</option>
+                        <option value="10k_15k">₱10,001 - ₱15,000</option>
+                        <option value="15k_20K">₱15,001 - ₱20,000</option>
+                        <option value="20K_25k">₱20,001 - ₱25,000</option>
+                        <option value="25k_30K">₱25,001 - ₱30,000</option>
+                        <option value="30k_35k">₱30,001 - ₱35,000</option>
+                        <option value="35k_40k">₱35,001 - ₱40,000</option>
+                        <option value="40k_45k">₱40,001 - ₱45,000</option>
+                        <option value="45K_50K">₱45,001 - ₱50,000</option>
+                        <option value="50k_above">Above ₱50,001</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="study-container">
+                <div class="study">
+                    <p>Do you have a quiet place to study?<span class="required"></p>
+                    <div class="study-section">
+                        <label><input type="radio" name="quiet-place" value="yes"> Yes</label>
+                        <label><input type="radio" name="quiet-place" value="no"> No</label>
+                    </div>
+                </div>
+                <div class="study">
+                    <p>Do you share your room with anyone?<span class="required"></span></p>
+                    <div class="study-section">
+                        <label><input type="radio" name="share-room" value="yes"> Yes</label>
+                        <label><input type="radio" name="share-room" value="no"> No</label>
+                        <div class="roommate">
+                            <label>If yes, with whom?</label>
+                            <input type="text" name="roommate-name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+            <div class="question">
+                <p>Nature of Residence while attending school:<span class="required"></span></span><i>(Please Check)</i></p>
+                <div class="checkbox-list">
+                  <div class="column1">
+                    <label><input type="checkbox" name="family_home">Family Home</label>
+                    <label><input type="checkbox" name="relatives_house">Relative's House</label>
+                    <label><input type="checkbox" name="shared_friends">Shares Apartment with Friends</label>
+                  </div>
+                  <div class="column1">
+                    <label><input type="checkbox" name="bedspace">Bed Spacer</label>
+                    <label><input type="checkbox" name="rent_apartment">Rented Apartment</label>
+                    <label><input type="checkbox" name="shared_relatives">Shares Apartment with Relatives</label>
+                  </div>
+                  <div class="column1">
+                    <label><input type="checkbox" name="house_sibs">House of Married Bother/Sister</label>
+                    <label><input type="checkbox" name="dorm">Dorm(Including board and lodging)</label>
+                  </div>
+                </div>
+            </div> 
+
+        </div>
+        </section>
+
+        <section id="health_part">
+            <div class="form-section">
+            <h1>IV. HEALTH</h1>
+            <h4>A. Physical</h4>
+                <div class="study-container">
+                <div class="study">
+                    <p>Do you have problems with your vision?<span class="required"></p>
+                    <div class="study-section">
+                        <label><input type="radio" name="vision" value="yes"> Yes</label>
+                        <label><input type="radio" name="vision" value="no"> No</label>
+                        <div class="roommate">
+                            <label>If yes, please specify</label>
+                            <input type="text" name="vision-problem">
+                        </div>
+                    </div>
+                </div>
+                <div class="study">
+                    <p>Do you have problems with your hearing?<span class="required"></span></p>
+                    <div class="study-section">
+                        <label><input type="radio" name="hearing" value="yes"> Yes</label>
+                        <label><input type="radio" name="hearing" value="no"> No</label>
+                        <div class="roommate">
+                            <label>If yes, please specify</label>
+                            <input type="text" name="hearing-problem">
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="study-container">
+                    <div class="study">
+                        <p>Do you have problems with your speech?<span class="required"></p>
+                        <div class="study-section">
+                            <label><input type="radio" name="speech" value="yes"> Yes</label>
+                            <label><input type="radio" name="speech" value="no"> No</label>
+                            <div class="roommate">
+                                <label>If yes, please specify</label>
+                                <input type="text" name="speech-problem">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="study">
+                        <p>Do you have problems with your general gut?<span class="required"></span></p>
+                        <div class="study-section">
+                            <label><input type="radio" name="general-gut" value="yes"> Yes</label>
+                            <label><input type="radio" name="general-gut" value="no"> No</label>
+                            <div class="roommate">
+                                <label>If yes, please specify</label>
+                                <input type="text" name="gut-problem">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>B. Psychological</h4>
+                <div class="study">
+                    <p>Did you consult a Psychiatrist recently?<span class="required"></p>
+                    <div class="study-section">
+                        <label><input type="radio" name="consult_psy" value="yes"> Yes</label>
+                        <label><input type="radio" name="consult_psy" value="no"> No</label>
+                    </div>
+                    <div class="container2">
+                        <div class="column">
+                            <label for="date_consult_psy">If yes, when did you consult a Psychiatrist?</label>
+                        <input type="date" id="date_consult_psy" name="date_consult_psy">
+                        </div>
+                        <div class="column">
+                            <label for="reason_consult_psy">For what reason?</label>
+                        <input type="text" id="reason_consult_psy" name="reason_consult_psy">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="study">
+                    <p>Did you consult a Psychiatrist recently?<span class="required"></p>
+                    <div class="study-section">
+                        <label><input type="radio" name="consult_psycho" value="yes"> Yes</label>
+                        <label><input type="radio" name="consult_psycho" value="no"> No</label>
+                    </div>
+                    <div class="container2">
+                        <div class="column">
+                            <label for="date_consult_psycho">If yes, when did you consult a Psychologist?</label>
+                        <input type="date" id="date_consult_psycho" name="date_consult_psycho">
+                        </div>
+                        <div class="column">
+                            <label for="reason_consult_psycho">For what reason?</label>
+                        <input type="text" id="reason_consult_psycho" name="reason_consult_psycho">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="study">
+                    <p>Did you consult a Counselor recently?<span class="required"></p>
+                    <div class="study-section">
+                        <label><input type="radio" name="consult_counsel" value="yes"> Yes</label>
+                        <label><input type="radio" name="consult_counsel" value="no"> No</label>
+                    </div>
+                    <div class="container2">
+                        <div class="column">
+                            <label for="date_consult_counsel">If yes, when did you consult a Counselor?</label>
+                        <input type="date" id="date_consult_counsel" name="date_consult_counsel">
+                        </div>
+                        <div class="column">
+                            <label for="reason_consult_counsel">For what reason?</label>
+                        <input type="text" id="reason_consult_counsel" name="reason_consult_counsel">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <section id="interest_hobbies">
+            <div class="form-section">
+            <h1>V. INTERESTS AND HOBBIES</h1>
+            <h4>A. Academic</h4>
+            <div class="question">
+                <p>Where academic clubs were you belong?<span class="required"></span><i>(Please Check)</i></span></p>
+                <div class="checkbox-list">
+                  <div class="column1">
+                    <label><input type="checkbox" name="math_club">Math Club</label>
+                    <label><input type="checkbox" name="debating_club">Debaating Club</label>
+                  </div>
+                  <div class="column1">
+                    <label><input type="checkbox" name="science_club">Science Club</label>
+                    <label><input type="checkbox" name="quizzer_club">Quizzer's Club</label>
+                  </div>
+                  <div class="column1">
+                    <label><input type="checkbox" name="others_club">Others</label>
+                  </div>
+            </div>
+                <div class="column">
+                    <label for="other_org">If others, specify</label>
+                <input type="text1" id="other_org" name="other_org">
+            </div>
+            </div>
+
+            <div class="container2">
+                <div class="column">
+                    <label for="fav_sub">What is/are your favorite subject/s?<span class="required"></span></label>
+                <input type="text" id="fav_sub" name="fav_sub" placeholder="Math" required>
+                </div>
+                <div class="column">
+                    <label for="least_sub">What is/are the subject/s you like least?<span class="required"></span></label>
+                <input type="text" id="least_sub" name="least_sub" placeholder="P.E" required>
+                </div>
+            </div>
+
+            <h4>B. Extra-Curricular</h4>
+            <h5>What are your hobbies? Write them in the order of your preferences.</h5>
+                <div class="container2">
+                    <div class="column">
+                        <label for="hobby_1">1<span class="required"></span></label>
+                    <input type="text" id="hobby_1" name="hobby_1" placeholder="Cooking" required>
+                    </div>
+                    <div class="column">
+                        <label for="hobby_2">2<span class="required"></span></label>
+                    <input type="text" id="hobby_2" name="hobby_2" placeholder="Playing online games" required>
+                    </div>
+                </div>
+
+                <div class="container2">
+                    <div class="column">
+                        <label for="hobby_3">3<span class="required"></span></label>
+                    <input type="text" id="hobby_3" name="hobby_3" placeholder="Reading" required>
+                    </div>
+                    <div class="column">
+                        <label for="hobby_4">4<span class="required"></span></label>
+                    <input type="text" id="hobby_4" name="hobby_4" placeholder="Painting" required>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Which of the following organizations have you participated in and which interest you most?<span class="required"></span><i>(Please Check)</i></span></p>
+                    <div class="checkbox-list">
+                      <div class="column1">
+                        <label><input type="checkbox" name="athletics">Athletics</label>
+                        <label><input type="checkbox" name="dramatics">Dramatics</label>
+                      </div>
+                      <div class="column1">
+                        <label><input type="checkbox" name="rel_org">Religious Organization</label>
+                        <label><input type="checkbox" name="chess_club">Chess Club</label>
+                      </div>
+                      <div class="column1">
+                        <label><input type="checkbox" name="gee-club">Gee Club</label>
+                        <label><input type="checkbox" name="scouting">Scouting</label>
+                      </div>
+                      <div class="column1">
+                        <label><input type="checkbox" name="others_org">Others</label>
+                      </div>
+                    </div>
+                
+                <div class="column">
+                        <label for="other_org">If others, specify</label>
+                    <input type="text1" id="other_org" name="other_org">
+                </div>
+                </div>
+
+                <div class="question">
+                    <p>Occupational position in the organization:<span class="required"></span><i>(Please Check)</i></p>
+                    <div class="checkbox-list">
+                      <div class="column1">
+                        <label><input type="checkbox" name="officer">Officer</label>
+                      </div>
+                      <div class="column1">
+                        <label><input type="checkbox" name="member">Member</label>
+                      </div>
+                      <div class="column1">
+                        <label><input type="checkbox" name="others_pos">Others</label>
+                      </div>
+                </div>
+                    <div class="column">
+                        <label for="other_pos">If others, specify</label>
+                    <input type="text1" id="other_pos" name="other_pos">
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="test_notes">
+            <div class="form-section">
+            <h1>VI. TEST RESULTS</h1>
+            <table class="test-results">
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>NAME OF TEST</th>
+                        <th>RS</th>
+                        <th>PR</th>
+                        <th>DESCRIPTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h1>VII. SIGNIFICANT NOTES<i>(For Guidance Counselors Only)</i></h1>
+            <table class="significant-notes">
+                <thead>
+                    
+                    <tr>
+                        <th>DATE</th>
+                        <th>INCIDENT</th>
+                        <th>REMARKS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+
+        <div>
+            <label for="signature">Upload your signature<span class="required"></span></label>
+            <input type="file" id="signature" name="signature" required>
+        </div>
+
+    <br>
+    <input type="submit" onclick="" value="SUBMIT">
+    
+    </form>
+
+    <div class="container3">
+        <p class="rounded-bg"><a href="home.html" style="text-decoration:none; color: #8B0000">Logout</a></p>
+    </div>
+    <div class="footer">
+        <p>All rights reserved. &copy; 2024 Gonzales & Mateo.</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,177 @@
+body {
+    background-image: url('assets/pup_campus.png');
+    background-size: 100% 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Century Gothic', Times, serif;
+}
+
+form {
+    font-family: 'Calibri', Times, serif;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+}
+
+h1, h4 {
+    color: #333;
+}
+
+h2 {
+    color: goldenrod;
+}
+
+h3 {
+    color: #8B0000;
+}
+
+h5 {
+    color: #8B0000;
+    font-size: 40px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+p {
+    font-weight: bold;
+    color: #333;
+}
+
+.header {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 35vh; 
+    padding-top: 20px;
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    position: relative;
+}
+
+.container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 35vh; 
+    padding-top: 20px;
+    padding-bottom: 150px;
+}
+
+input[type="email"],
+input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.required:after {
+    content: "*";
+    color: red;
+    margin-left: 2px;
+}
+
+input[type="submit"] {
+    background-color: goldenrod;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #8B0000;
+    font-weight: bold;
+}
+
+
+nav {
+    background-color: #8B0000;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    float: left;
+}
+
+nav ul li a:hover {
+    background-color: goldenrod;
+}
+
+nav ul li.right {
+    float: right;
+}
+
+nav ul li.current a {
+    font-weight: bolder;
+    background-color: #790101;
+}
+
+.contact {
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.channels {
+    padding-left: 110px;
+}
+
+.about {
+    padding-left: 50px;
+    padding-bottom: 40px;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+  }

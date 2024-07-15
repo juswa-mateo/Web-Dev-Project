@@ -1,0 +1,323 @@
+body {
+    background-image: url('assets/form_bg.png');
+    background-position: center;
+    background-size: 50%;
+    background-repeat: repeat;
+    color: white;
+    font-family: 'Century Gothic', Times, serif;
+}
+
+form {
+    font-family: 'Arial', Times, serif;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+h3 {
+    color: #8B0000;
+    text-align: center;
+}
+
+h4 {
+    color: #333;
+    font-style: italic;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh; 
+    padding-top: 20px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+.container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    font-size: larger;
+}
+
+.column {
+    flex: 1;
+    margin-right: 20px; 
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+.rounded-bg {
+    background-clip: padding-box;
+    border-radius: 20px;
+    background-color: #F0F0F0;
+    color: #000000;
+    padding: 5px 10px;
+    display: inline;
+}
+
+.rounded-bg:hover {
+    background-color: #d3d3d3c9;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"], 
+input[type="email"],
+input[type="password"],
+select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="text1"]{
+    width: 48%;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="file"]{
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.required:after {
+    content: "*";
+    color: red;
+    margin-left: 2px;
+}
+
+
+input[type="submit"] {
+    background-color: goldenrod;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #8B0000;
+    font-weight: bold;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: goldenrod;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a {
+    color: #333;
+    background-color: white;
+    border-radius: 20px;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    font-weight: bolder;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+.question {
+    font-family: 'Arial', Times, serif;
+    padding: 10px;
+    font-size: 16px;
+}
+  
+.question p {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+  
+.checkbox-list {
+    display: flex;
+    gap: 50px; /* Space between checkboxes */
+}
+  
+.checkbox-list label {
+    display: flex;
+    align-items: center; /* Align checkboxes and text vertically */
+    margin-right: 50px;
+    margin-bottom: 10px;
+    font-weight: normal;
+
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.question i {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.radio-section {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    gap: 10px; /* Space between radio buttons and labels */
+}
+  
+.radio-section label {
+    display: flex;
+    align-items: center; /* Align radio buttons and text vertically */
+    margin-right: 10px; /* Space between labels */
+    text-align: center
+}
+  
+.radio-section input[type="text"] {
+    margin-left: 1px; /* Space between label text and input box */
+}
+
+.study-container {
+    font-family: 'Arial', Times, serif;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+}
+
+.study {
+    margin-bottom: 5px;
+    flex: 1;
+}
+
+.study p {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.study i {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.study-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.study-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.roommate {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.roommate label {
+    margin-bottom: 5px;
+}
+
+.roommate input {
+    width: 98%;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th[colspan="5"], th[colspan="3"] {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.significant-notes th span {
+    font-weight: normal;
+    font-style: italic;
+}
+
+thead th {
+    background-color: #e0e0e0;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+  }
